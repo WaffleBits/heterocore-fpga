@@ -18,7 +18,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y iverilog yosys
       - run: make test
       - run: make synth
+      - run: >
+          python tools/build_schedule.py
+          examples/tiny_char_transformer.plan.json
+          -o build/tiny_char_transformer_schedule.hex
       - uses: actions/upload-artifact@v7
         with:
           name: yosys-report
-          path: build/yosys.log
+          path: |
+            build/yosys.log
+            build/tiny_char_transformer_schedule.hex

@@ -9,10 +9,10 @@
       "dimensions": {"m": 128, "k": 256, "n": 256}
     },
     {
-      "id": "softmax",
-      "type": "softmax",
+      "id": "attention_scores",
+      "type": "matmul",
       "target": "digital",
-      "dimensions": {"m": 128, "k": 128, "n": 128}
+      "dimensions": {"m": 128, "k": 256, "n": 128}
     },
     {
       "id": "output_projection",
@@ -23,4 +23,3 @@
   ],
   "claim_scope": {"classification": "analytical projection", "measured_hardware": false}
 }
-

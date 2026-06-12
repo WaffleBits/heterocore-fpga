@@ -6,14 +6,15 @@ flowchart LR
     E --> B[Initialized block RAM]
     B --> X[Schedule executor]
     X --> A[Analog latency model]
-    X --> D[Digital latency model]
+    X --> D[Signed INT8 matrix engine]
     X --> L[Board LEDs]
 ```
 
 The FPGA prototype executes the same 32-bit schedule format as
-`heterocore-rtl`. Until a physical analog array is attached, the analog and
-digital engines are deterministic latency models. Their purpose is to verify
-control flow, schedule ordering, completion, and board integration.
+`heterocore-rtl`. Until a physical analog array is attached, the analog target
+is a deterministic latency model. The digital target performs a real signed
+INT8 matrix product with INT32 accumulation, exact MAC/cycle counters, and
+self-checked results.
 
 ## Arty A7 Controls
 
@@ -27,4 +28,3 @@ control flow, schedule ordering, completion, and board integration.
 | LED3 | heartbeat |
 
 The checked-in XDC uses Digilent's Arty A7-35T master pin assignments.
-

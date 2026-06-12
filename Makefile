@@ -1,4 +1,4 @@
-RTL := rtl/button_conditioner.sv rtl/latency_engine.sv rtl/schedule_executor.sv rtl/heterocore_fpga_top.sv
+RTL := rtl/button_conditioner.sv rtl/latency_engine.sv rtl/int8_matmul_engine.sv rtl/schedule_executor.sv rtl/heterocore_fpga_top.sv
 PYTHON ?= python3
 
 .PHONY: test schedule synth vivado clean
