@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+build/
+*.jou
+*.log
+*.str
+*.bit
+*.dcp
+obj_dir/
+
