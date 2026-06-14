@@ -1,0 +1,12 @@
+read_verilog -sv rtl/topk_unit.sv
+read_verilog -sv rtl/kv_block_selector.sv
+read_verilog -sv rtl/kv_selector_demo_top.sv
+hierarchy -check -top kv_selector_demo_top
+proc
+opt
+memory
+opt
+techmap
+opt
+stat
+write_json build/kv_selector_demo_top.json

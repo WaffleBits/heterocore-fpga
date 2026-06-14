@@ -28,3 +28,12 @@ self-checked results.
 | LED3 | heartbeat |
 
 The checked-in XDC uses Digilent's Arty A7-35T master pin assignments.
+
+## KV Selector Demo
+
+`kv_selector_demo_top` is a separate core-level top for the HeteroDecode
+vertical slice. Its scalar load interface fills query and summary registers,
+then the quantized scorer and streaming top-k unit return selected block IDs and
+scores with exact cycle and byte counters. It is simulation-ready but is not
+yet connected to Arty pins, UART, Ethernet, or a physical power-measurement
+path.

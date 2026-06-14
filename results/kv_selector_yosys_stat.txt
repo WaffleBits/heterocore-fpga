@@ -1,0 +1,27 @@
+Tool: Yosys 0.33 (git sha1 2584903a060)
+Command: make synth-selector
+Top: kv_selector_demo_top
+Configuration: DIM=16, NUM_BLOCKS=8, MAX_K=4, DATA_WIDTH=8
+
+Flattened design hierarchy:
+  wires: 1026
+  wire bits: 86594
+  public wires: 63
+  public wire bits: 3280
+  memories: 0
+  processes: 0
+  cells: 12341
+
+Cell breakdown:
+  $_AND_: 2245
+  $_DFFE_PN0P_: 1446
+  $_DFFE_PN1P_: 16
+  $_DFF_PN0_: 2
+  $_MUX_: 6024
+  $_NOT_: 279
+  $_OR_: 1728
+  $_XOR_: 601
+
+Claim boundary:
+  Generic open-source technology mapping only. This is not Xilinx utilization,
+  placement, timing, bitstream, board power, or physical FPGA evidence.
