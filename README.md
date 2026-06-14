@@ -28,6 +28,17 @@ cells, including 459 flip-flops and two DSP48E1 blocks. This is an open-source
 synthesis result for the fixed demonstration kernel, not a Vivado post-route
 utilization or timing result.
 
+The repository now also includes a host-loadable KV selector demo. A host
+streams one quantized query and multiple key-block summaries, starts the
+datapath, and receives deterministic top-k block IDs, scores, cycle count, and
+logical bytes read. The self-checking simulation returns IDs `1,0`, scores
+`20,10`, 21 cycles, and 20 bytes for the fixed fixture.
+
+`make synth-selector` runs Yosys 0.33 on the default 16-dimension, eight-block,
+top-4 core. The checked summary reports 12,341 generic cells after technology
+mapping, including the host-load register storage. This is an open-source
+generic synthesis count, not Xilinx utilization, placement, timing, or power.
+
 ## Build a Schedule
 
 ```bash
@@ -62,3 +73,8 @@ now a synthesizable INT8 matrix engine with local activation, weight, and
 result storage. It is still a fixed demonstration kernel rather than a complete
 transformer datapath. The next physical milestone is loading compiler-generated
 tiles over a host interface and measuring latency and wall power on a board.
+
+The standalone `kv_selector_demo_top` closes the host-load interface and
+selector-datapath milestone in simulation. Physical timing, utilization,
+bitstream, power, and parity evidence remain blocked on a connected board and
+Vivado board build.
